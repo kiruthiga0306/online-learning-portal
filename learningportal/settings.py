@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-v34v-y)nyl(t1s&50x5smbjq59ml%0*ch5tbt&yzok$4jfiznv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['kiruthiga0306.pythonanywhere.com']
 
 # Application definition
 
@@ -75,12 +74,8 @@ WSGI_APPLICATION = 'learningportal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'learningportal_db',
-        'USER': 'root',
-        'PASSWORD': 'dharun28',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -119,6 +114,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
