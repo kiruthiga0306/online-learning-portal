@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Portal</title>
+    <link rel="stylesheet" href="{% static 'courses/style.css' %}">
+</head>
+<body>
+
+<header class="header">
+    <h1>Online Learning Portal</h1>
+    <p>Learn, Grow, Succeed.</p>
+</header>
+
+<div class="container">
+    <h2>Available Courses</h2>
+
+    {% if courses %}
+        <div class="course-grid">
+            {% for course in courses %}
+                <div class="course-card">
+                    <h3>{{ course.title }}</h3>
+                    <p>{{ course.description }}</p>
+                    <div class="price">₹ {{ course.price }}</div>
+                <a href="{% url 'course_detail' course.id %}">View Course</a>
+                <a href="{% url 'enroll' course.id %}">
+                    <button class="btn">Enroll Now</button>
+                    </a>
+                <a href="{% url 'make_payment' course.id %}">
+    <button>Pay ₹{{ course.price }}</button>
+</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No courses available.</p>
+    {% endif %}
+</div>
+
+<footer class="footer">
+    <p>© 2026 Learning Portal</p>
+</footer>
+
+</body>
+</html>

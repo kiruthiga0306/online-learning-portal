@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .box {
+            background: white;
+            padding: 40px;
+            width: 420px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .success {
+            color: #28a745;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="success">✅ Payment Successful</div>
+    <p>Thank you for enrolling in this course.</p>
+    <p>Your payment has been recorded successfully.</p>
+
+    <a href="{% url 'dashboard' %}" class="btn">Go to Dashboard</a>
+</div>
+
+</body>
+</html>

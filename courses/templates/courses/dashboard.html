@@ -1,0 +1,13 @@
+<h2>My Enrolled Courses</h2>
+
+{% for enroll in enrollments %}
+    <div class="course-card">
+        <h3>{{ enroll.course.title }}</h3>
+
+        <a href="{% url 'course_detail' enroll.course.id %}">Watch Videos</a>
+        |
+        <a href="{% url 'feedback' enroll.course.id %}">Give Feedback</a>
+    </div>
+{% empty %}
+    <p>No enrollments yet.</p>
+{% endfor %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enrollment Successful</title>
+</head>
+<body style="text-align:center; padding-top:60px; font-family:Arial">
+
+<h2>✅ Enrollment Successful</h2>
+<p>You have enrolled in <b>{{ course.title }}</b></p>
+
+<a href="{% url 'make_payment' course.id %}">
+    <button>Proceed to Payment</button>
+</a>
+
+</body>
+</html>
